@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QuantumHive.Core.Domain.Components\QuantumHive.Core.Domain.Components.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -3,9 +3,77 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuantumHive.Core", "QuantumHive.Core\QuantumHive.Core.csproj", "{11A48821-7F56-4F32-92AA-6C505F73C9D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RowinEnckhofPersonalTraining", "RowinEnckhofPersonalTraining", "{F3168C39-8143-469F-A834-07DDADFCC3BB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuantumHive.RowinEnckhofPersonalTraining.Domain", "QuantumHive.RowinEnckhofPersonalTraining.Domain\QuantumHive.RowinEnckhofPersonalTraining.Domain.csproj", "{CBF843E3-A484-4CCA-A093-2991C25D4EEC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuantumHive.RowinEnckhofPersonalTraining.DataAccess", "QuantumHive.RowinEnckhofPersonalTraining.DataAccess\QuantumHive.RowinEnckhofPersonalTraining.DataAccess.csproj", "{EF6CB9DC-256A-418C-A5B2-9BC00CD8407D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuantumHive.Core.Domain.Components", "QuantumHive.Core.Domain.Components\QuantumHive.Core.Domain.Components.csproj", "{BEA5E2EC-66D4-4B11-B634-BF42197C2036}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuantumHive.Core.EntityFramework", "QuantumHive.Core.EntityFramework\QuantumHive.Core.EntityFramework.csproj", "{B3B09FE2-A5D4-43B1-A789-A3803FB266BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{3032EE1E-F59C-4934-9FB1-1CB2F3AA5029}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuantumHive.RowinEnckhofPersonalTraining.BusinessLogic", "QuantumHive.RowinEnckhofPersonalTraining.BusinessLogic\QuantumHive.RowinEnckhofPersonalTraining.BusinessLogic.csproj", "{89C444F7-7D23-4682-BC72-61B4C9333C07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantumHive.RowinEnckhofPersonalTraining.Contract", "QuantumHive.RowinEnckhofPersonalTraining.Contract\QuantumHive.RowinEnckhofPersonalTraining.Contract.csproj", "{EF8A1ACC-4036-4811-A3F2-35AA06F55191}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantumHive.RowinEnckhofPersonalTraining.App", "QuantumHive.RowinEnckhofPersonalTraining.App\QuantumHive.RowinEnckhofPersonalTraining.App.csproj", "{C57D0D58-2ADE-4B12-A4AD-F9507557F0A3}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11A48821-7F56-4F32-92AA-6C505F73C9D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11A48821-7F56-4F32-92AA-6C505F73C9D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11A48821-7F56-4F32-92AA-6C505F73C9D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11A48821-7F56-4F32-92AA-6C505F73C9D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBF843E3-A484-4CCA-A093-2991C25D4EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF843E3-A484-4CCA-A093-2991C25D4EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF843E3-A484-4CCA-A093-2991C25D4EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF843E3-A484-4CCA-A093-2991C25D4EEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF6CB9DC-256A-418C-A5B2-9BC00CD8407D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF6CB9DC-256A-418C-A5B2-9BC00CD8407D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF6CB9DC-256A-418C-A5B2-9BC00CD8407D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF6CB9DC-256A-418C-A5B2-9BC00CD8407D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEA5E2EC-66D4-4B11-B634-BF42197C2036}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA5E2EC-66D4-4B11-B634-BF42197C2036}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA5E2EC-66D4-4B11-B634-BF42197C2036}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA5E2EC-66D4-4B11-B634-BF42197C2036}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3B09FE2-A5D4-43B1-A789-A3803FB266BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3B09FE2-A5D4-43B1-A789-A3803FB266BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3B09FE2-A5D4-43B1-A789-A3803FB266BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3B09FE2-A5D4-43B1-A789-A3803FB266BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89C444F7-7D23-4682-BC72-61B4C9333C07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89C444F7-7D23-4682-BC72-61B4C9333C07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89C444F7-7D23-4682-BC72-61B4C9333C07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89C444F7-7D23-4682-BC72-61B4C9333C07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF8A1ACC-4036-4811-A3F2-35AA06F55191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF8A1ACC-4036-4811-A3F2-35AA06F55191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF8A1ACC-4036-4811-A3F2-35AA06F55191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF8A1ACC-4036-4811-A3F2-35AA06F55191}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C57D0D58-2ADE-4B12-A4AD-F9507557F0A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C57D0D58-2ADE-4B12-A4AD-F9507557F0A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C57D0D58-2ADE-4B12-A4AD-F9507557F0A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C57D0D58-2ADE-4B12-A4AD-F9507557F0A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{11A48821-7F56-4F32-92AA-6C505F73C9D6} = {3032EE1E-F59C-4934-9FB1-1CB2F3AA5029}
+		{CBF843E3-A484-4CCA-A093-2991C25D4EEC} = {F3168C39-8143-469F-A834-07DDADFCC3BB}
+		{EF6CB9DC-256A-418C-A5B2-9BC00CD8407D} = {F3168C39-8143-469F-A834-07DDADFCC3BB}
+		{BEA5E2EC-66D4-4B11-B634-BF42197C2036} = {3032EE1E-F59C-4934-9FB1-1CB2F3AA5029}
+		{B3B09FE2-A5D4-43B1-A789-A3803FB266BC} = {3032EE1E-F59C-4934-9FB1-1CB2F3AA5029}
+		{89C444F7-7D23-4682-BC72-61B4C9333C07} = {F3168C39-8143-469F-A834-07DDADFCC3BB}
+		{EF8A1ACC-4036-4811-A3F2-35AA06F55191} = {F3168C39-8143-469F-A834-07DDADFCC3BB}
+		{C57D0D58-2ADE-4B12-A4AD-F9507557F0A3} = {F3168C39-8143-469F-A834-07DDADFCC3BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F604072A-0298-4F74-894A-276652CC9464}

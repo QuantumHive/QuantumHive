@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+    <PackageReference Include="SimpleInjector.Integration.AspNetCore.Mvc" Version="4.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QuantumHive.Core.Domain.Components\QuantumHive.Core.Domain.Components.csproj" />
+    <ProjectReference Include="..\QuantumHive.Core.EntityFramework\QuantumHive.Core.EntityFramework.csproj" />
+    <ProjectReference Include="..\QuantumHive.Core\QuantumHive.Core.csproj" />
+    <ProjectReference Include="..\QuantumHive.RowinEnckhofPersonalTraining.BusinessLogic\QuantumHive.RowinEnckhofPersonalTraining.BusinessLogic.csproj" />
+    <ProjectReference Include="..\QuantumHive.RowinEnckhofPersonalTraining.Contract\QuantumHive.RowinEnckhofPersonalTraining.Contract.csproj" />
+    <ProjectReference Include="..\QuantumHive.RowinEnckhofPersonalTraining.DataAccess\QuantumHive.RowinEnckhofPersonalTraining.DataAccess.csproj" />
+    <ProjectReference Include="..\QuantumHive.RowinEnckhofPersonalTraining.Domain\QuantumHive.RowinEnckhofPersonalTraining.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
