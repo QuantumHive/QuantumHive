@@ -19,9 +19,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{3032EE1E-F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuantumHive.RowinEnckhofPersonalTraining.BusinessLogic", "QuantumHive.RowinEnckhofPersonalTraining.BusinessLogic\QuantumHive.RowinEnckhofPersonalTraining.BusinessLogic.csproj", "{89C444F7-7D23-4682-BC72-61B4C9333C07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantumHive.RowinEnckhofPersonalTraining.Contract", "QuantumHive.RowinEnckhofPersonalTraining.Contract\QuantumHive.RowinEnckhofPersonalTraining.Contract.csproj", "{EF8A1ACC-4036-4811-A3F2-35AA06F55191}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuantumHive.RowinEnckhofPersonalTraining.Contract", "QuantumHive.RowinEnckhofPersonalTraining.Contract\QuantumHive.RowinEnckhofPersonalTraining.Contract.csproj", "{EF8A1ACC-4036-4811-A3F2-35AA06F55191}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantumHive.RowinEnckhofPersonalTraining.App", "QuantumHive.RowinEnckhofPersonalTraining.App\QuantumHive.RowinEnckhofPersonalTraining.App.csproj", "{C57D0D58-2ADE-4B12-A4AD-F9507557F0A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuantumHive.RowinEnckhofPersonalTraining.App", "QuantumHive.RowinEnckhofPersonalTraining.App\QuantumHive.RowinEnckhofPersonalTraining.App.csproj", "{C57D0D58-2ADE-4B12-A4AD-F9507557F0A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShiLaLounge", "ShiLaLounge", "{4E446B26-E8E6-4F53-B490-10CBEB6A32A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantumHive.ShiLaLounge.App", "QuantumHive.ShiLaLounge.App\QuantumHive.ShiLaLounge.App.csproj", "{FD2C0B85-5EB2-4FDF-9CB1-EE9E97F16B2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +65,10 @@ Global
 		{C57D0D58-2ADE-4B12-A4AD-F9507557F0A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C57D0D58-2ADE-4B12-A4AD-F9507557F0A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C57D0D58-2ADE-4B12-A4AD-F9507557F0A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD2C0B85-5EB2-4FDF-9CB1-EE9E97F16B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD2C0B85-5EB2-4FDF-9CB1-EE9E97F16B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD2C0B85-5EB2-4FDF-9CB1-EE9E97F16B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD2C0B85-5EB2-4FDF-9CB1-EE9E97F16B2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +82,7 @@ Global
 		{89C444F7-7D23-4682-BC72-61B4C9333C07} = {F3168C39-8143-469F-A834-07DDADFCC3BB}
 		{EF8A1ACC-4036-4811-A3F2-35AA06F55191} = {F3168C39-8143-469F-A834-07DDADFCC3BB}
 		{C57D0D58-2ADE-4B12-A4AD-F9507557F0A3} = {F3168C39-8143-469F-A834-07DDADFCC3BB}
+		{FD2C0B85-5EB2-4FDF-9CB1-EE9E97F16B2F} = {4E446B26-E8E6-4F53-B490-10CBEB6A32A6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F604072A-0298-4F74-894A-276652CC9464}

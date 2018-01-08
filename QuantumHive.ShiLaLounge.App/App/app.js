@@ -1,0 +1,70 @@
+﻿import React from "react";
+import { NavLink, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
+
+import Home from "./home";
+import Menu from "./menu";
+import Contact from "./contact";
+
+export default class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.navBarCollapseClick = this.navBarCollapseClick.bind(this);
+    }
+
+    navBarCollapseClick() {
+        $("#navbarNav").collapse("hide");
+    }
+
+    render() {
+        return (
+            <div>
+                <nav className="navbar fixed-top navbar-expand-sm navbar-light bg-light">
+                    <div className="container">
+                        <a className="navbar-brand" href="/">
+                            <img src="/images/shila-logo-trans.png" width="30" height="30" className="d-inline-block align-top" alt="Shi-La Lounge" /> Shi-La Lounge
+                        </a>
+                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div className="collapse navbar-collapse" id="navbarNav">
+                            <div className="navbar-nav">
+                                <NavLink exact to="/" className="nav-link nav-item" onClick={this.navBarCollapseClick}> Home</NavLink>
+                                <NavLink exact to="/menu" className="nav-link nav-item" onClick={this.navBarCollapseClick}> Menu</NavLink>
+                                <NavLink exact to="/contact" className="nav-link nav-item" onClick={this.navBarCollapseClick}> Contact</NavLink>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                <div className="container" style={{marginTop: "64px", marginBottom: "110px"}}>
+                    <main role="main" className="mx-auto">
+                        <Route exact path="/" component={Home} />
+                        <Route exact path="/menu" component={Menu} />
+                        <Route exact path="/contact" component={Contact} />
+                    </main>
+                </div>
+
+                <nav className="navbar fixed-bottom navbar-light bg-light ">
+                    <footer className="mx-auto d-flex flex-column">
+                        <p>© 2017, Shi-La Lounge</p>
+
+                        <div className="mx-auto">
+                            <a href="https://www.instagram.com/shilalounge/" target="_blank" className="mr-1">
+                                <img src="/images/instagram.png" alt="instagram" height="50" width="50" />
+                            </a>
+                            <a href="https://www.facebook.com/Shi-la-Lounge-1173785306101035/" target="_blank" className="">
+                                <img src="/images/facebook.png" alt="facebook" height="50" width="50" />
+                            </a>
+                        </div>
+                        
+                    </footer>
+                </nav>
+
+               
+            </div>
+        );
+    }
+}
