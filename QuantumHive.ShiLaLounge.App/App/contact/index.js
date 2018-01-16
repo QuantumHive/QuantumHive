@@ -58,7 +58,7 @@ class Contact extends React.Component {
                 <div className="embed-responsive embed-responsive-16by9">
                     <iframe className="embed-responsive-item"
                         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA9QBJTbl62J_c9RhLFF_m36Jlx0ViP9zM&q=place_id:ChIJM9ed_1Gkx0cR-eF_H11HtG4"
-                        allowfullscreen></iframe>
+                        allowFullScreen></iframe>
                 </div>
             </div>
         );
