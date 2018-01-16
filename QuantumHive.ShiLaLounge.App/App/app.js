@@ -6,11 +6,38 @@ import Home from "./home";
 import Menu from "./menu";
 import Contact from "./contact";
 
+import smokemachine from "./lib/smoke.js";
+
 export default class App extends React.Component {
     constructor(props) {
         super(props);
 
         this.navBarCollapseClick = this.navBarCollapseClick.bind(this);
+    }
+
+    componentDidMount() {
+        const canvas = document.getElementById("smokeCanvas");
+        const ctx = canvas.getContext("2d");
+        window.addEventListener("resize", () => this.resizeCanvas(canvas), false);
+        this.resizeCanvas(canvas);
+
+        const party = smokemachine(ctx, [134, 41, 150]);
+        party.start();
+
+        $(document).mousemove(event => {
+            const x = event.pageX;
+            const y = event.pageY;
+            const n = .5;
+            const t = Math.floor(Math.random() * 200) + 3800;
+            party.addsmoke(x, y, n, t);
+        });
+
+        setInterval(() => party.addsmoke(innerWidth / 2, innerHeight, 1), 100);
+    }
+
+    resizeCanvas(canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
     }
 
     navBarCollapseClick() {
@@ -19,7 +46,7 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <div >
                 <nav className="navbar fixed-top navbar-expand-sm navbar-light bg-light">
                     <div className="container">
                         <a className="navbar-brand" href="/">
@@ -39,7 +66,7 @@ export default class App extends React.Component {
                     </div>
                 </nav>
 
-                <div className="container" style={{marginTop: "64px", marginBottom: "110px"}}>
+                <div className="container" style={{ marginTop: "64px", marginBottom: "110px" }}>
                     <main role="main" className="mx-auto">
                         <Route exact path="/" component={Home} />
                         <Route exact path="/menu" component={Menu} />
@@ -59,11 +86,9 @@ export default class App extends React.Component {
                                 <img src="/images/facebook.png" alt="facebook" height="50" width="50" />
                             </a>
                         </div>
-                        
+
                     </footer>
                 </nav>
-
-               
             </div>
         );
     }

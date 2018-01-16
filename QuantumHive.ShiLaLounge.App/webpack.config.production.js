@@ -29,8 +29,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: "./index.html",
-            favicon: "./favicon.ico",
-            
+            favicon: "./favicon.ico"
         }),
         new CopyWebpackPlugin([
             { from: "../wwwroot/images/", to: "images" }
