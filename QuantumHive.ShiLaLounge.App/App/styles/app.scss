@@ -1,1 +1,16 @@
-﻿
+﻿$white: #202020 !default;
+$gray-100: #382C3A;
+$gray-200: #382C3A;
+$gray-300: #513955;
+$gray-400: #513955;
+$gray-500: #341C39;
+$gray-600: rgba(255, 255, 255, 0.5);
+$gray-700: rgba(255, 255, 255, 0.5);
+$gray-800: rgba(255, 255, 255, 0.5);
+$gray-900: rgba(255, 255, 255, 0.5);
+$black: rgba(255, 255, 255, 0.5);
+
+$blue: #862996 !default;
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
