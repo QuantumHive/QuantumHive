@@ -5,13 +5,17 @@ import { AppContainer } from "react-hot-loader";
 import "../node_modules/bootstrap/scss/bootstrap.scss";
 import "../node_modules/font-awesome/scss/font-awesome.scss";
 
+import "jquery";
+import "popper.js";
+import "bootstrap";
+
 import moment from "moment";
 moment.locale("nl");
 
 import ConfigureStore from "./configurestore";
 const store = ConfigureStore();
 
-import Root from "./root"
+import Root from "./root";
 
 render(
     <AppContainer>

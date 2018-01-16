@@ -7,10 +7,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using QuantumHive.Core;
+using QuantumHive.Core.EntityFramework.Services;
+using QuantumHive.RowinEnckhofPersonalTraining.DataAccess;
 using SimpleInjector;
 using SimpleInjector.Integration.AspNetCore.Mvc;
 using SimpleInjector.Lifestyles;
@@ -19,33 +22,33 @@ namespace QuantumHive.RowinEnckhofPersonalTraining.App
 {
     public static class Bootstrapper
     {
-        private static readonly Container _container = new Container();
+        private static readonly Container Container = new Container();
 
         public static void Verify()
         {
-            _container.Verify();
+            Container.Verify();
         }
 
         public static void IntegrateSimpleInjector(this IServiceCollection services)
         {
-            _container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
+            Container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddSingleton<IControllerActivator>(
-                new SimpleInjectorControllerActivator(_container));
+                new SimpleInjectorControllerActivator(Container));
             services.AddSingleton<IViewComponentActivator>(
-                new SimpleInjectorViewComponentActivator(_container));
+                new SimpleInjectorViewComponentActivator(Container));
 
-            services.EnableSimpleInjectorCrossWiring(_container);
-            services.UseSimpleInjectorAspNetRequestScoping(_container);
+            services.EnableSimpleInjectorCrossWiring(Container);
+            services.UseSimpleInjectorAspNetRequestScoping(Container);
         }
 
         public static void InitializeContainer(this IApplicationBuilder app, IConfigurationRoot configuration)
         {
-            _container.RegisterMvcControllers(app);
-            _container.RegisterMvcViewComponents(app);
-            _container.CrossWire<ILoggerFactory>(app);
+            Container.RegisterMvcControllers(app);
+            Container.RegisterMvcViewComponents(app);
+            Container.CrossWire<ILoggerFactory>(app);
 
             var assemblies = GetAssemblies.ToArray();
 
@@ -53,6 +56,7 @@ namespace QuantumHive.RowinEnckhofPersonalTraining.App
             RegisterQueryHandlers(assemblies);
             RegisterCommandHandlers(assemblies);
             RegisterValidators();
+            RegisterDataServices(configuration);
         }
 
         private static void RegisterServices()
@@ -62,12 +66,12 @@ namespace QuantumHive.RowinEnckhofPersonalTraining.App
 
         private static void RegisterQueryHandlers(IEnumerable<Assembly> assemblies)
         {
-            _container.Register(typeof(IQueryHandler<,>), assemblies);
+            Container.Register(typeof(IQueryHandler<,>), assemblies);
         }
 
         private static void RegisterCommandHandlers(IEnumerable<Assembly> assemblies)
         {
-            _container.Register(typeof(ICommandHandler<>), assemblies);
+            Container.Register(typeof(ICommandHandler<>), assemblies);
         }
 
         private static void RegisterValidators()
@@ -75,9 +79,22 @@ namespace QuantumHive.RowinEnckhofPersonalTraining.App
             
         }
 
-        private static void RegisterDataServices()
+        private static void RegisterDataServices(IConfiguration configuration)
         {
-            
+            var connectionString = configuration.GetConnectionString("rownipt");
+            RowinEnckhofPersonalTrainingContext DbContextCreator() => new RowinEnckhofPersonalTrainingContext(null); //TODO connection string + usercontext
+            var dbContextRegistration = Lifestyle.Scoped.CreateRegistration(DbContextCreator, Container);
+            Container.AddRegistration<RowinEnckhofPersonalTrainingContext>(dbContextRegistration);
+            Container.AddRegistration<DbContext>(dbContextRegistration);
+
+            Type RepositoryTypeFactory(TypeFactoryContext typeContext)
+            {
+                var entityType = typeContext.ServiceType.GetGenericArguments()[0];
+                return typeof(Repository<,>).MakeGenericType(typeof(RowinEnckhofPersonalTrainingContext), entityType);
+            }
+
+            Container.RegisterConditional(typeof(IReader<>), RepositoryTypeFactory, Lifestyle.Transient, predicate => true);
+            Container.RegisterConditional(typeof(IRepository<>), RepositoryTypeFactory, Lifestyle.Transient, predicate => true);
         }
 
         private static IEnumerable<Assembly> GetAssemblies =>

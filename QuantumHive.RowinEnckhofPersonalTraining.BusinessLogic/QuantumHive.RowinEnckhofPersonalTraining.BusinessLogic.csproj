@@ -5,8 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CommandHandlers\" />
     <Folder Include="QueryHandlers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QuantumHive.Core\QuantumHive.Core.csproj" />
+    <ProjectReference Include="..\QuantumHive.RowinEnckhofPersonalTraining.Contract\QuantumHive.RowinEnckhofPersonalTraining.Contract.csproj" />
+    <ProjectReference Include="..\QuantumHive.RowinEnckhofPersonalTraining.Domain\QuantumHive.RowinEnckhofPersonalTraining.Domain.csproj" />
   </ItemGroup>
 
 </Project>
