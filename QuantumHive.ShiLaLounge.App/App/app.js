@@ -20,9 +20,28 @@ export default class App extends React.Component {
         const ctx = canvas.getContext("2d");
         window.addEventListener("resize", () => this.resizeCanvas(canvas), false);
         this.resizeCanvas(canvas);
-
-        const party = smokemachine(ctx, [134, 41, 150]);
+        //const color = [134, 41, 150];
+        const color = [145, 146, 146];
+        const party = smokemachine(ctx, color);
         party.start();
+
+        document.addEventListener("touchstart", event => {
+            var touch = event.touches[0];
+            const x = touch.pageX;
+            const y = touch.pageY;
+            const n = .5;
+            const t = Math.floor(Math.random() * 200) + 3800;
+            party.addsmoke(x, y, n, t);
+        }, false);
+
+        document.addEventListener("touchmove", event => {
+            var touch = event.touches[0];
+            const x = touch.pageX;
+            const y = touch.pageY;
+            const n = .5;
+            const t = Math.floor(Math.random() * 200) + 3800;
+            party.addsmoke(x, y, n, t);
+        }, false);
 
         $(document).mousemove(event => {
             const x = event.pageX;
@@ -76,7 +95,7 @@ export default class App extends React.Component {
 
                 <nav className="navbar fixed-bottom navbar-light bg-light ">
                     <footer className="mx-auto d-flex flex-column">
-                        <p>© 2017, Shi-La Lounge</p>
+                        <p>© 2018, Shi-La Lounge</p>
 
                         <div className="mx-auto">
                             <a href="https://www.instagram.com/shilalounge/" target="_blank" className="mr-1">

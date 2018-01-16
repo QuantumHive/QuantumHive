@@ -1,20 +1,26 @@
 ﻿import React from "react";
+import { NavLink } from "react-router-dom";
 
 class Home extends React.Component {
     render() {
         return (
             <div className="d-flex flex-column align-items-center">
-                <div className="d-none d-sm-none d-md-block">
-                    <h1>Welkom bij Shi-La Lounge Arnhem</h1>
+                <div className="d-none d-sm-none d-md-block mt-5">
+                    <h1>Shi-La Lounge Arnhem</h1>
                 </div>
-                <div className="d-none d-sm-block d-md-none">
-                    <h2>Welkom bij Shi-La Lounge Arnhem</h2>
+                <div className="d-none d-sm-block d-md-none mt-5">
+                    <h2>Shi-La Lounge Arnhem</h2>
                 </div>
-                <div className="d-block d-sm-none">
-                    <h4>Welkom bij Shi-La Lounge Arnhem</h4>
+                <div className="d-block d-sm-none mt-5">
+                    <h3>Shi-La Lounge Arnhem</h3>
                 </div>
-                
 
+                <NavLink exact to="/menu" className="btn btn-outline-primary btn-lg mt-5"> Menu</NavLink>
+                <NavLink exact to="/contact" className="btn btn-outline-primary btn-lg mt-4"> Contact</NavLink>
+
+                
+                
+                {/*
                 <div id="showcase" className="carousel slide my-5" data-ride="carousel">
                     <ol className="carousel-indicators">
                         <li data-target="#showcase" data-slide-to="0" className="active"></li>
@@ -45,7 +51,7 @@ class Home extends React.Component {
                         <span className="carousel-control-next-icon"></span>
                         <span className="sr-only">Volgende</span>
                     </a>
-                </div>
+                </div>*/}
             </div>
         );
     }

@@ -1,16 +1,34 @@
-﻿$white: #202020 !default;
-$gray-100: #382C3A;
-$gray-200: #382C3A;
-$gray-300: #513955;
-$gray-400: #513955;
-$gray-500: #341C39;
-$gray-600: rgba(255, 255, 255, 0.5);
-$gray-700: rgba(255, 255, 255, 0.5);
-$gray-800: rgba(255, 255, 255, 0.5);
-$gray-900: rgba(255, 255, 255, 0.5);
-$black: rgba(255, 255, 255, 0.5);
+﻿/*
+    base:       #862996
 
-$blue: #862996 !default;
+    main:       #241B25
+
+    light1:     #554458
+    light2:     #3D313F
+
+    dark1:      #201422
+    dark2:      #1D0E1F
+
+    white:      #FFFFFF
+    gray-dark:  #919292
+    gray-light: #E1E2E1
+*/
+
+$white: #241B25;
+$gray-100: #1D0E1F;
+$gray-200: #E1E2E1;
+$gray-300: #554458;
+$gray-400: #201422;
+$gray-500: #3D313F;
+$gray-600: #3D313F;
+$gray-700: #554458;
+$gray-800: #3D313F;
+$gray-900: #919292;
+$black: #E1E2E1;
+
+$blue: #919292;
+
+$font-family-base: 'Playfair Display', serif;
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
