@@ -32,7 +32,8 @@ module.exports = {
             favicon: "./favicon.ico"
         }),
         new CopyWebpackPlugin([
-            { from: "../wwwroot/images/", to: "images" }
+            { from: "../wwwroot/images/", to: "images" },
+            "../wwwroot/200.html"
         ])
     ],
     module: {

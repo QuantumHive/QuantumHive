@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\200.html" />
     <None Include="wwwroot\images\facebook.png" />
     <None Include="wwwroot\images\instagram.png" />
     <None Include="wwwroot\images\shila-full-header.png" />
