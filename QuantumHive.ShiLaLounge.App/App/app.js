@@ -3,6 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import { Route } from "react-router-dom";
 
 import Home from "./home";
+import LiveMusic from "./livemusic";
 import Menu from "./menu";
 import Contact from "./contact";
 
@@ -79,6 +80,7 @@ export default class App extends React.Component {
                             <div className="navbar-nav">
                                 <NavLink exact to="/" className="nav-link nav-item" onClick={this.navBarCollapseClick}> Home</NavLink>
                                 <NavLink exact to="/menu" className="nav-link nav-item" onClick={this.navBarCollapseClick}> Menu</NavLink>
+                                <NavLink exact to="/livemusic" className="nav-link nav-item" onClick={this.navBarCollapseClick}> Live Muziek</NavLink>
                                 <NavLink exact to="/contact" className="nav-link nav-item" onClick={this.navBarCollapseClick}> Contact</NavLink>
                             </div>
                         </div>
@@ -88,6 +90,7 @@ export default class App extends React.Component {
                 <div className="container" style={{ marginTop: "64px", marginBottom: "110px" }}>
                     <main role="main" className="mx-auto">
                         <Route exact path="/" component={Home} />
+                        <Route exact path="/livemusic" component={LiveMusic} />
                         <Route exact path="/menu" component={Menu} />
                         <Route exact path="/contact" component={Contact} />
                     </main>
