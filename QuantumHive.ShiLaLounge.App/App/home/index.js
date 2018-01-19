@@ -4,22 +4,36 @@ import { NavLink } from "react-router-dom";
 class Home extends React.Component {
     render() {
         return (
-            <div className="d-flex flex-column align-items-center">
-                <div className="d-none d-sm-none d-md-block mt-5">
-                    <h1>Shi-La Lounge Arnhem</h1>
-                </div>
-                <div className="d-none d-sm-block d-md-none mt-5">
-                    <h2>Shi-La Lounge Arnhem</h2>
-                </div>
-                <div className="d-block d-sm-none mt-5">
-                    <h3>Shi-La Lounge Arnhem</h3>
+            <div>
+                <div className="row">
+                    <div className="col mt-5">
+                        <div className="d-none d-sm-none d-md-block">
+                            <h1 className="text-center">Shi-La Lounge Arnhem</h1>
+                        </div>
+                        <div className="d-none d-sm-block d-md-none">
+                            <h2 className="text-center">Shi-La Lounge Arnhem</h2>
+                        </div>
+                        <div className="d-block d-sm-none">
+                            <h3 className="text-center">Shi-La Lounge Arnhem</h3>
+                        </div>
+                    </div>
                 </div>
 
-                <NavLink exact to="/menu" className="btn btn-outline-primary btn-lg mt-5"> Menu</NavLink>
-                <NavLink exact to="/contact" className="btn btn-outline-primary btn-lg mt-4"> Contact</NavLink>
+                <div className="row">
+                    <div className="col mt-5">
+                        <div className="d-none d-sm-none d-md-flex justify-content-center">
+                            <NavLink exact to="/menu" className="btn btn-outline-primary btn-lg"> Menu</NavLink>
+                            <NavLink exact to="/livemusic" className="btn btn-outline-primary btn-lg mx-3"> Live Muziek</NavLink>
+                            <NavLink exact to="/contact" className="btn btn-outline-primary btn-lg"> Contact</NavLink>
+                        </div>
+                        <div className="d-flex d-md-none flex-column">
+                            <NavLink exact to="/menu" className="btn btn-outline-primary btn-lg mb-3"> Menu</NavLink>
+                            <NavLink exact to="/livemusic" className="btn btn-outline-primary btn-lg mb-3"> Live Muziek</NavLink>
+                            <NavLink exact to="/contact" className="btn btn-outline-primary btn-lg"> Contact</NavLink>
+                        </div>
+                    </div>
+                </div>
 
-                
-                
                 {/*
                 <div id="showcase" className="carousel slide my-5" data-ride="carousel">
                     <ol className="carousel-indicators">
